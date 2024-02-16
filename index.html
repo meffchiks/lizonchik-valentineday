@@ -58,6 +58,8 @@
 			document.getElementById("mainGif").src = "gifs/accepte.gif"
 			document.getElementById("buttons").remove()
 			document.getElementById("mainText").innerText = "С днём святого валентина зай ! Я тебя очень сильно люблю !"
+			var audio = new Audio('sound/jg-032316-sfx-smooch-kiss.mp3');
+      audio.play();
       var where = document.getElementById('heart');
  where.innerHTML = '<a href="love.html">❤️</a>';
 			vibrate(300)
@@ -90,6 +92,8 @@
 				document.getElementById("mainGif").src = "gifs/refuse.gif"
 				document.getElementById("buttons").remove()
 				document.getElementById("mainText").innerText = "Ты разбила мне сердце...."
+				var audio = new Audio('sound/plach-rydaniya-jenshiny66.mp3');
+      audio.play();
         var timer = setTimeout(function() {
             window.location='matrix.html'
         }, 3000);
