@@ -37,10 +37,7 @@
   <script src="./js/count-time.js"></script>
 
   <script async src="emojis.js"></script>
-<script>
-var vaudio = new Audio('sound/error.mp3');
-      vaudio.play();
-</script>
+
 	
     
 </head>
@@ -50,14 +47,15 @@ var vaudio = new Audio('sound/error.mp3');
     <img src="img/preloader.gif" alt="preloader">
   </div>
   <script>
-	  var vaudio = new Audio('sound/error.mp3');
-      vaudio.play();
+	 
     window.onload = function() {
     let preloader = document.getElementById('preloader');
     preloader.classList.add('hide-preloader');
     setInterval(function() {
           preloader.classList.add('preloader-hidden');
     }, 990);
+	    var vaudio = new Audio('sound/error.mp3');
+      vaudio.play();
 }
 	  
   </script>
