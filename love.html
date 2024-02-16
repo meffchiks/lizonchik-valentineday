@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Частичка любви</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">##</span><br/>
+			<span class="comments"># Я простой парень,</span><br/>
+			<span class="comments"># решивший поздравить свою девушку с днём Святого Валентина.</span><br/>
+			<span class="comments">##</span><br/>
+			i = Boy(<span class="string">"Игорь Марченко"</span>);<br/>
+			u = Girl(<span class="string">"Елизавета Сазонова"</span>);<br/>
+			<span class="comments"># Март, Я встретился и сразу же влюбился. </span><br/>
+			i.meet(u)<br/>
+			<span class="comments"># После этого я признался об этом. </span><br/>
+			i.confess(u)<br/>
+			<span class="comments"># Мы стали самой милой парой.</span><br/>
+			u.accepted(i)<br/>
+			<span class="comments"># С тех пор мы каждый день жили в гармонии и счастье.</span><br/>
+			happy(u, i)<br/>
+			<span class="comments"># Нам нравится быть вместе.</span><br/>
+			tobe(u, i)<br/>
+			<span class="comments"># Кушать вместе.</span><br/>
+			eat(u, i)<br/>
+			<span class="comments"># Спать вместе.</span><br/>
+			sleep(u, i)<br/>
+			<span class="comments"># Нам нравится общаться вместе.</span><br/>
+			talk(u, i)<br/>
+			<span class="comments"># Иногда мы конфликтуем или ссоримся.</span><br/>
+			conflict(u, i, sometimes=<span class="keyword">True</span>)<br/>
+			<span class="comments"># Но мы становимся все более и более сплаченные вместе.</span><br/>
+			u.in_harmony_with(i) <br/>
+			i.in_harmony_with(u) <br/>
+			<span class="comments"># Ты - самая большая любовь в моей жизни.</span><br/>
+			while <span class="keyword">True</span>:<br/>
+			<span class="placeholder"></span><span class="keyword">if</span> u.with(i):<br/>
+			<span class="placeholder"></span><span class="placeholder"></span>u = everything<br/>
+			<span class="placeholder"></span><span class="keyword">else</span>:<br/>
+			<span class="placeholder"></span><span class="placeholder"></span>everything = u<br/>
+			<span class="comments"># Надеюсь все что говорю взаимно и будет всегда так.</span><br/>
+			i.love(u, in_the_future=<span class="keyword">True</span>)<br/>
+			i.live_happily_forever_with(u)<br/>
+			<span class="comments"># Я люблю тебя всегда зай.</span><br/>
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					Лиза, целую и люблю!
+					<div></div>
+				</div>
+				<div id="loveu">
+					Мгмгмг пукпук.<br/>
+					<div class="signature">- Сократ | какой то бомж из древней Греции</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="copyright">
+		Copyright © 2024 <a href='index.html'>Igor Marchenko</a> 
+	</div>
+</div>
+<script type="text/javascript">
+	var offsetX = $("#loveHeart").width() / 2;
+	var offsetY = $("#loveHeart").height() / 2 - 55;
+	var together = new Date();
+	// 此处月份介于 0 ~ 11 之间。用本地时间表示，如 8 月要用 7 表示。
+	together.setFullYear(2018, 10, 5);
+	together.setHours(15);
+	together.setMinutes(0);
+	together.setSeconds(0);
+	together.setMilliseconds(0);
+
+	if (!document.createElement('canvas').getContext) {
+		var msg = document.createElement("div");
+		msg.id = "errorMsg";
+		msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+		document.body.appendChild(msg);
+		$("#code").css("display", "none")
+		$("#copyright").css("position", "absolute");
+		$("#copyright").css("bottom", "10px");
+		document.execCommand("stop");
+	} else {
+		setTimeout(function () {
+			startHeartAnimation();
+		}, 5000);
+
+		timeElapse(together);
+		setInterval(function () {
+			timeElapse(together);
+		}, 500);
+
+		adjustCodePosition();
+		$("#code").typewriter();
+	}
+</script>
+</body>
+</html>
